@@ -1,0 +1,311 @@
+/*Pedro*/
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+header{
+    background: #BBBBBB;/*é a cor cinza de fundo*/
+    padding: 20px 0;/*controla o espaçamento interno; ou seja se aumentamos os pixels o espaço em cinza*/
+}
+
+/*O posicionamento é sempre estatico; assim que acabar uma imagem ou uma frase
+o proximo item vai se iniciar logo abaixo, da esquerda da direita.
+em é necessario destacalo da folha. usando os comandos: position: relative ou absolute*/
+
+.caixa{
+    position: relative; /*esse comando destaca a imagem/frase; referente a sua posição inicial*/
+    width: 940px;/*foi delimitado uma largura fixa, porque é uma largura padrão que se usa no desenvolvimento web*/
+    margin: 0 auto;/*Para que a caixa centralize o menu e a imagem é precisso zerar a marger de cima
+    e a de baixo e deixar a margem da esquerda e da direita automatica para que ela possa sempre se
+    recalcular caso o tamanho da imagem mude*/ 
+}
+
+nav{
+    position: absolute;/*esse codigo destaca item, mas se referenciando a todo o site*/
+    top:110px;
+    right:0;
+}
+
+nav li{
+    display: inline;/*esse codigo alinha os itens*/
+    margin: 0 0 0 15px;/*controla a margem dos itens cima: 0; direita: 0; baixo: 0; esquerda: 15pixels*/
+}
+
+nav a{/*manuseia o link*/
+    text-transform: uppercase;/*aumenta a fonte*/
+    color: #000000;/*faz com que a cor dos links fique preto*/
+    font-weight: bold;/*aumenta o peso das fontes; bold é o negrito*/
+    font-size: 22px;/*aumenta o tamanho da fonte*/
+    text-decoration: none/*tira a decoração do texto, no caso o sublinhado*/
+}
+
+nav a:hover{/*mapeia o mouse informando quando ele esta porcima do elemento*/
+    color: #C78C19;
+    text-decoration: underline;
+}
+
+nav a:active{
+    color: #a10a0a;
+}
+
+.produtos{/*Para que os produtos tenham o mesmo comportamento da caixa*/
+    width: 940px;
+    margin: 0 auto;
+    /*para que os elementos não fiquem colados com o cabeçalho aumentamos o espaçamento interno*/
+    padding: 50px 0;/*50px para cima e para baixo e 0 para os lados*/
+}
+
+.produtos li {
+    display: inline-block;/*Para que os itens fiquem um do lado do outro*/
+    text-align: center;/*Para centralizar o texto*/
+    width: 30%;/*em referencia a 100% da pagina, quero que cada um dos item ocupem 30% da pagina*/
+    vertical-align: top;/*um dos problemas do codigo: display: inline-block é que ele sempre alinha 
+    os elementos pela linha de baixo então para corrigir isso usamao o codigo vertical-align: top*/
+    margin: 0 1.5%;/*para separar os elementos que estão um do lado do outro; cima e baixo: 0; 
+    esquerda e direita: 1.5%*/
+    padding: 30px 20px;/*esse espaçamento interno está adicionando pixels no elenetos que já possuem
+    30% de largura mais 3% margem, essa soma vai quebrar o alinhamento dos topicos*/
+    box-sizing: border-box;/*para resolver esse problema usamos o codigo box-sizing: border-box;
+    ele faz com que os 30% sejam sempre a largura e esses pixels estjam dentro desses 30%*/
+    border: 2px solid #000000;
+    /*solid=linha; dashed=trastechado; dotted=pontilhado*/
+    border-radius: 10px;/*esse codigo controla o raio das bordas*/
+}
+
+.produtos li:hover{/*No hover, mapeamos o comportamento do mouse por cima do elemento, 
+                    e podemos usar isso para destacar visualmente o elemento em questão.*/
+    border-color: #C78C19;
+}
+
+.produtos li:active/*ele fará a animação de quando o mouse esta sendo clicado*/{
+    border-color: #a10a0a;
+}
+
+.produtos li:hover h2{
+    font-size: 34px;
+}
+
+.produtos h2{/*para mexer apenas com os titulo*/
+    font-size: 30px; /*tamanho 30 pixels*/
+    font-weight: bold;/*em negrito*/
+}
+
+.produto-descricao {
+    font-size: 18px;/*tamanho 18 pixels*/
+}
+
+
+.produto-preco{
+    font-size: 22px;/*tamanho da fonte 22 pixels*/
+    font-weight: bold;/*para que o peso da fonte seja em negrito*/
+    margin-top: 10px; /*= margin: 10px 0 0 0;para os preços não ficarem muito colados com a descrição*/
+}
+
+footer{
+    text-align: center;
+    background: url("bg.jpg");/*Quando criamos no CSS uma imagem de fundo de qualquer elemento, 
+    por padrão, o CSS, ele vai copiando e colando aquela imagem, infinitas vezes, 
+    até ocupar todo o espaço do elemento. Então, usamos uma imagem pequena, que tem um tamanho
+    pequeno e o CSS, ele vai replicando, ao invés de usarmos uma imagem gigante e ficar gastando a 
+    banda e a internet do usuário.*/
+    padding: 40px 0;/*40 pixels cima e baixo e 0 para os lados*/
+}
+
+.copyright{
+    color: #FFFFFF;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+form{
+    margin: 40px 0;
+}
+
+form label, form legend{
+    display: block;
+    font-size:20px;
+    margin: 0 0 10px;
+}
+
+.input-padrao{
+    display:block;
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    width: 50%;
+}
+
+.checkbox{
+    margin:20px 0;
+}
+
+.enviar{
+    width: 40%;
+    padding: 15px 0;
+    background: orange;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    transition: 1s all;/*é um delay para iniciar o hover*/
+    cursor: pointer;/*transforma o cursor em uma mão*/
+}
+
+.enviar:hover{
+    background: darkorange;
+    transform: scale(1.2);/*Aumenta o tamanho do item*/
+    /*transform: rotate(180deg) faz o item rirar quando for passar o maouse*/ 
+}
+
+table{
+    margin:20px 0 40px;
+}
+
+table thead{
+    background: #555555;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+td,th{
+    border: 1px solid #000000;
+    padding: 8px 15px;
+}
+/*css da pagina inicial*/
+.banner{
+    width:100%;
+}
+
+.titulo-principal{
+    text-align: center;
+    font-size: 2em;
+    margin:0 0 1em 0;
+    clear: left; 
+}
+
+.principal{
+    padding: 3em 0;
+    background: #FEFEFE;
+    /*////////////////
+    background: #CCCCCC;
+    ////////////////*/
+    width: 940px;
+    margin: 0 auto;
+}
+
+.principal p{
+    margin: 0 0 1em;
+}
+
+.principal strong{
+    font-weight: bold;
+}
+
+.principal em{
+    font-style: italic;
+}
+
+.utensilios{
+    width: 120px;
+    float: left;
+    margin:0 20px 20px 0;
+}
+
+.mapa{
+    padding: 3em 0;
+    background: linear-gradient(#FEFEFE, #888888);
+    /*//////////////////////////////
+    background: linear-gradient(#CCCCCC, #000000);
+    /////////////////////////////*/
+}
+
+.mapa-conteudo{
+    width: 940px;
+    margin: 0 auto;
+}
+
+.mapa p{
+    margin: 0 0 2em 0;
+    text-align: center;
+}
+.beneficios{
+    padding: 3em 0;
+    background: #888888;
+    /*////////////////
+    background: #000000;
+    ///////////////*/
+}
+
+.conteudo-beneficios{
+    width: 640px;
+    margin: 0 auto;    
+}
+
+.lista-beneficios{
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.itens{
+    line-height: 1.5em;/*é o espaçamento de cada topico*/
+}
+
+.itens:before{
+    content: "✂";
+}
+
+.itens:first-child{
+    font-weight: bold;
+}
+/*via CSS, uma marcação. Além do first-child, temos a opção last-child que marcará o último item da lista. 
+Isso é interessante, porque não precisaremos mais saber quantos itens existem na lista para passar 
+configurações precisas, essa caracaterística é muito útil em manipulação de tabelas, por exemplo.
+Por fim, temos a possibilidade de selecionar qualquer elemento da lista por via do nth-child(), que 
+receberá o número que quisermos, como por exemplo 4, que se refere ao quarto elemento da lista. 
+Podemos ainda utilizar valores como 2n com o nth-child(), o que quer dizer marcamos todos os elementos 
+pares da lista, isto é, o segundo, quarto e sexto elemento da lista ficam em negrito.*/
+
+.itens:hover{
+    font-weight: bold;
+}
+
+.imagem-beneficios{
+    width: 60%;
+    opacity: 1;
+    transition: 400ms;
+    box-shadow: 10px 10px 10px 0 #000000;
+}
+
+.imagem-beneficios:hover{
+    opacity: 0.3;
+    box-shadow: 0 0 0 0 #000000;
+}
+
+
+.video{
+    width: 560px;
+    margin: 2em auto;
+}
+
+@media screen and (max-width: 480px) {
+    .caixa, .principal, .conteudo-beneficios, .mapa-conteudo, .video {
+        width: auto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    nav {
+        position: static;
+    }
+
+    .lista-beneficios, .imagem-beneficios {
+        width: 100%;
+    }
+}
+
+/*/////////////////////////////////////////////////////
+/////////////////////////////////////////////////////*/
